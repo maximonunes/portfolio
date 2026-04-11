@@ -1,3 +1,3 @@
 # portfolio
 # Máximo Nunes 
-# utilizador - admin password - password
+utilizador - admin password - password
