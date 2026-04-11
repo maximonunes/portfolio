@@ -1,8 +1,11 @@
 from django.contrib import admin
-# Remove 'Interesse' se não o criaste no models.py, e verifica os outros nomes
-from .models import Curso, UnidadeCurricular, TFC, Tecnologia, Projeto, Formacao, Competencia, MakingOf
+from .models import (
+    Curso, UnidadeCurricular, TFC, Tecnologia, 
+    Projeto, Formacao, Competencia, MakingOf, 
+    Perfil, Docente, Interesse
+)
 
-# Exemplo de registo simples para não dar erro:
+# Registo direto de todas as entidades
 admin.site.register(Curso)
 admin.site.register(UnidadeCurricular)
 admin.site.register(TFC)
@@ -11,3 +14,6 @@ admin.site.register(Projeto)
 admin.site.register(Formacao)
 admin.site.register(Competencia)
 admin.site.register(MakingOf)
+admin.site.register(Perfil)
+admin.site.register(Docente)
+admin.site.register(Interesse)
