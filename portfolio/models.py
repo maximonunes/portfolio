@@ -24,13 +24,22 @@ class TFC(models.Model):
 
     def __str__(self):
         return self.titulo
-
-
+    
 class UnidadeCurricular(models.Model):
     codigo = models.CharField(max_length=50)
     nome = models.CharField(max_length=300)
     ects = models.FloatField()
     semestre = models.IntegerField()
+
+    # 🔥 NOVOS CAMPOS
+    ano_curricular = models.IntegerField(default=1)
+    descricao = models.TextField(blank=True)
+    objetivos = models.TextField(blank=True)
+    programa = models.TextField(blank=True)
+    avaliacao = models.TextField(blank=True)
+
+    # 🔥 RELAÇÃO COM CURSO
+    licenciatura = models.ForeignKey(Curso, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
