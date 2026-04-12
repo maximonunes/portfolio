@@ -1,245 +1,245 @@
-# 📄 Making Of – Portfólio em Django
-
-## 1. Introdução
-
-Este projeto teve como objetivo o desenvolvimento de uma aplicação web de portfólio utilizando o framework Django.
-
-A aplicação permite organizar e apresentar informação académica relevante, nomeadamente Trabalhos Finais de Curso (TFCs), cursos e unidades curriculares, com recurso a dados externos em formato JSON e APIs públicas.
-
-O sistema foi desenvolvido com foco na automatização da importação de dados, modelação relacional e integração de fontes externas de informação académica.
+# 📓 Making Of — Projeto Portfólio Django
 
 ---
 
-## 2. Modelação de Dados
+## 🧠 1. Processo de Modelação Geral
 
-A modelação de dados foi um dos elementos centrais do projeto, tendo sido implementada com o framework :contentReference[oaicite:0]{index=0} através do seu ORM (Object-Relational Mapping).
+O desenvolvimento deste projeto começou com uma fase de planeamento em papel, onde identifiquei todas as entidades necessárias para representar um portfólio académico completo.
 
-Foram definidos os seguintes modelos principais:
+Nesta fase inicial:
 
-- **Curso**
-- **Autor**
-- **TFC (Trabalho Final de Curso)**
-- **Unidade Curricular**
+- Defini as entidades principais  
+- Estabeleci relações entre elas  
+- Elaborei um primeiro Diagrama Entidade–Relação (DER)  
+- Listei atributos de cada entidade em folhas separadas  
 
----
-
-## 📌 Estrutura das entidades
-
-### 🎓 Curso
-Representa um curso académico da instituição.
-
-**Objetivo:**
-Centralizar a informação base dos cursos e servir de referência para outras entidades.
+Esta abordagem permitiu-me organizar melhor a informação antes da implementação em Django, evitando decisões apressadas durante a programação.
 
 ---
 
-### 👤 Autor
-Representa o autor de um Trabalho Final de Curso.
+## 🔄 2. Evolução do Modelo e do DER
 
-**Objetivo:**
-Permitir a identificação e reutilização de autores em diferentes TFCs, evitando duplicação de dados.
+Durante o processo de desenvolvimento, o modelo sofreu algumas alterações importantes.
 
----
+O primeiro DER incluía todos os atributos previstos inicialmente, incluindo um campo de **nível de interesse** na entidade Tecnologia.
 
-### 📘 TFC (Trabalho Final de Curso)
-Representa um projeto académico final.
+No entanto, após reflexão e implementação prática, decidi remover esse atributo do modelo final.
 
-**Objetivo:**
-Armazenar informação detalhada sobre projetos desenvolvidos no contexto académico.
+### Justificação da alteração:
 
----
+- O nível de interesse acabou por ser redundante, pois o modelo já incluía Competências e Projetos como formas mais concretas de avaliação de experiência  
+- A remoção contribuiu para um modelo mais limpo e focado na informação essencial  
+- Melhorou a coerência do sistema de relações entre entidades  
 
-### 📚 Unidade Curricular
-Representa uma disciplina pertencente a um curso.
+Outra decisão importante foi separar a definição dos atributos do DER.
 
-**Objetivo:**
-Descrever o plano curricular de forma detalhada e estruturada.
+Inicialmente, os atributos estavam incluídos no próprio diagrama, o que tornava o esquema visual mais pesado e difícil de interpretar.  
+Ao separar esta informação:
 
----
-
-## 📌 Relações implementadas
-
-O modelo relacional foi definido com base em relações do tipo 1:N:
-
-- Um **Curso** pode estar associado a vários **TFCs**
-- Um **Autor** pode estar associado a vários **TFCs**
-- Um **Curso** pode ter várias **Unidades Curriculares**
+- o DER ficou mais claro e focado nas relações  
+- a descrição dos atributos ficou mais organizada e legível  
 
 ---
 
-## 🔗 Representação das relações
+### 📸 Evidência da evolução
 
-- Curso → TFC (1:N)  
-- Autor → TFC (1:N)  
-- Curso → Unidade Curricular (1:N)  
+📸 DER inicial (com todos os atributos)  
+<!-- INSERIR IMAGEM DO DER INICIAL -->
 
----
+📸 DER final (simplificado)  
+<!-- INSERIR IMAGEM DO DER FINAL -->
 
-## 3. Evolução da Modelação
-
-A modelação inicial foi sendo progressivamente refinada ao longo do desenvolvimento do projeto, com base na análise dos dados reais obtidos através de ficheiros JSON e APIs externas.
-
-### 🔄 Principais alterações realizadas:
-
-- Criação da entidade **Autor**, separando-a do modelo TFC
-- Expansão do modelo **TFC** com campo `resumo`
-- Evolução do modelo **Unidade Curricular** com novos atributos:
-  - `descricao`
-  - `objetivos`
-  - `programa`
-  - `avaliacao`
-  - `ano_curricular`
-- Introdução da relação entre **Unidade Curricular e Curso**
-
-### 📌 Justificação das alterações:
-
-Estas alterações foram realizadas com os seguintes objetivos:
-
-- Melhor representação da realidade académica  
-- Redução de redundância de dados  
-- Normalização da base de dados  
-- Suporte a informação mais detalhada proveniente das APIs  
-- Preparação do modelo para futuras extensões  
+📸 Página separada com atributos das entidades  
+<!-- INSERIR IMAGEM DOS ATRIBUTOS -->
 
 ---
 
-## 4. Importação de Dados (TFCs)
+## 👤 3. Processo de Modelação: Perfil
 
-Foi desenvolvido o script `importar_tfcs.py` para automatizar a importação de dados a partir de ficheiros JSON.
+A entidade Perfil representa a informação pessoal do portfólio.
 
-### ⚙️ Funcionamento do script:
+### Decisões de modelação:
 
-- Percorre todos os ficheiros JSON na pasta `data/`
-- Lê e interpreta os dados
-- Trata diferentes estruturas (lista ou objeto único)
-- Extrai informação relevante:
-  - título
-  - ano
-  - resumo
-  - curso
-  - autor
-- Cria automaticamente os registos na base de dados
+- Incluí fotografia para reforçar a componente visual  
+- Adicionei biografia para contextualização pessoal  
+- Incluí links externos (LinkedIn e GitHub) por serem essenciais em contexto profissional  
+- Adicionei currículo em PDF para download direto  
 
-### 📌 Decisões técnicas:
-
-- Utilização de `.get()` para evitar erros em campos inexistentes  
-- Utilização de `get_or_create()` para evitar duplicação de cursos e autores  
-- Normalização dos dados antes da inserção  
+Esta entidade serve como base de apresentação do portfólio.
 
 ---
 
-## 5. Importação de Dados (Cursos e UCs)
 
-Foi desenvolvido o script `importar_ucs.py`, responsável pela integração de dados provenientes de APIs externas.
+## 🎓 4. Processo de Modelação: Curso
 
-### ⚙️ Funcionamento:
+O Curso representa a estrutura base do percurso académico.
 
-- Leitura de ficheiros JSON obtidos da API
-- Identificação de cursos e unidades curriculares
-- Criação ou atualização de registos na base de dados
+### Decisões de modelação:
 
-### 📌 Decisões técnicas:
-
-- `get_or_create()` utilizado para garantir unicidade de cursos  
-- `update_or_create()` utilizado para permitir atualização de UCs  
-- Estrutura preparada para lidar com dados externos variáveis  
+- Usei `codigo` como identificador principal por coerência com dados externos  
+- Incluí nome e descrição para contextualização  
+- Adicionei logotipo para melhorar a apresentação visual  
 
 ---
 
-## 6. Consumo de API
 
-Foi desenvolvido o script `download_api.py` para recolha automática de dados académicos através de APIs externas.
+## 📚 5. Processo de Modelação: Unidade Curricular
 
-### 📌 Dados obtidos:
+A Unidade Curricular foi uma das entidades mais importantes do modelo, pois organiza todo o percurso académico.
 
-- Informação de cursos
-- Planos curriculares
-- Unidades curriculares detalhadas
+### Decisões de modelação:
 
-Os dados são armazenados na pasta `files/` em formato JSON.
+- Separei `ano` e `semestre` para permitir filtragem eficiente  
+- Usei `CharField` para o código legível, devido à sua natureza alfanumérica  
+- Incluí ECTS para caracterização académica  
+- Adicionei imagem e link externo para enriquecer a apresentação  
 
-### 📌 Justificação:
+### Relações:
 
-- Separação entre recolha e processamento de dados  
-- Reutilização dos dados offline  
-- Maior controlo sobre a informação importada  
-
----
-
-## 7. Organização do Projeto
-
-A estrutura do projeto foi organizada de forma modular:
-
-- `data/` → ficheiros JSON de TFCs  
-- `files/` → dados obtidos da API  
-- `scripts/` → scripts de importação e automação  
-- `portfolio/` → aplicação principal  
-- `config/` → configurações do projeto  
-
-### 📌 Justificação:
-
-Esta organização permite:
-
-- Separação clara de responsabilidades  
-- Facilidade de manutenção do código  
-- Escalabilidade do projeto  
-- Melhor leitura e organização da aplicação  
+- Curso (ForeignKey) → estrutura hierárquica  
+- Docente (ForeignKey) → docente responsável  
 
 ---
 
-## 8. Administração (Django Admin)
 
-Os modelos foram registados no painel de administração do Django.
+## 👨‍🏫 6. Processo de Modelação: Docente
 
-### 📌 Funcionalidades utilizadas:
+Inicialmente, os docentes estavam representados apenas como texto dentro das UCs.
 
-- Inserção manual de dados  
-- Visualização de registos  
-- Validação de dados importados  
+Após análise do modelo, percebi que isso criava redundância e pouca flexibilidade, pelo que optei por criar uma entidade própria.
 
-### 📌 Vantagens:
+### Decisões de modelação:
 
-- Interface automática fornecida pelo Django  
-- Facilidade de testes  
-- Gestão rápida de dados  
+- Evitar repetição de nomes  
+- Permitir reutilização de docentes  
+- Adicionar biografia e link profissional  
 
 ---
 
-## 9. Dificuldades Encontradas
 
-Durante o desenvolvimento surgiram várias dificuldades técnicas:
+## 💻 7. Processo de Modelação: Projeto
 
-- Diferenças na estrutura dos ficheiros JSON (listas vs objetos únicos)  
-- Mapeamento entre dados da API e modelos internos  
-- Integração de dados externos com estrutura relacional existente  
-- Problemas ao adicionar novas relações no modelo (migrations)
+Os projetos representam a parte prática do portfólio e são uma das entidades mais importantes.
 
-### ⚠️ Problema específico:
+### Decisões de modelação:
 
-Ao adicionar a relação `ForeignKey` entre Unidade Curricular e Curso, o Django exigiu um valor por defeito para registos já existentes na base de dados.
+- Incluí ano para organização cronológica  
+- Adicionei link para GitHub (essencial para avaliação profissional)  
+- Incluí imagem para apresentação visual  
+- Adicionei descrição detalhada do projeto  
 
-### ✅ Solução adotada:
+### Relações:
 
-- Definição de um valor por defeito durante a migração  
-- Posterior correção dos dados através dos scripts de importação  
-- Ajustes incrementais na modelação  
+- UC (ForeignKey) → contexto académico  
+- Tecnologia (ManyToMany) → flexibilidade tecnológica  
 
 ---
 
-## 10. Conclusão
 
-Este projeto permitiu consolidar conhecimentos fundamentais em:
+## ⚙️ 8. Processo de Modelação: Tecnologia
 
-- Modelação de dados relacionais  
-- Desenvolvimento com Django e ORM  
-- Integração de APIs externas  
-- Processamento e importação de dados JSON  
-- Automatização de processos de dados  
+A entidade Tecnologia representa ferramentas, linguagens e frameworks utilizados nos projetos.
 
-A aplicação desenvolvida representa uma base sólida para um portfólio académico dinâmico, com estrutura preparada para evolução futura e expansão de funcionalidades.
+### Decisões de modelação:
+
+- Incluí categoria para organização (frontend, backend, etc.)  
+- Adicionei logotipo e link oficial  
+- Removi o campo nível de interesse para simplificar o modelo final  
+
+Esta remoção foi importante para evitar redundância com outras entidades do sistema.
 
 ---
 
-## 💡 Reflexão final
+## 🧠 9. Processo de Modelação: Competência
 
-Este projeto demonstrou a importância de uma modelação de dados bem estruturada e da adaptação contínua do sistema à realidade dos dados disponíveis, reforçando a necessidade de uma abordagem iterativa no desenvolvimento de aplicações web.
+A entidade Competência representa as capacidades adquiridas ao longo do percurso académico.
+
+### Decisões de modelação:
+
+- Defini um nível de 1 a 5 para representar domínio  
+- Relacionei competências com projetos para validação prática  
+
+---
+
+
+## 🎓 10. Processo de Modelação: Formação
+
+A entidade Formação representa cursos adicionais e certificações.
+
+### Decisões de modelação:
+
+- Estrutura cronológica com data de início e fim  
+- Flexibilidade para formações em curso  
+
+---
+
+
+## 🏆 11. Processo de Modelação: TFC
+
+Os Trabalhos Finais de Curso foram modelados com base em dados externos (JSON).
+
+### Decisões de modelação:
+
+- Selecionei apenas atributos relevantes  
+- Incluí resumo, autores e orientadores  
+- Adicionei rating para destacar trabalhos mais relevantes  
+
+### Relações:
+
+- Curso (ForeignKey) → associação académica  
+
+---
+
+
+## 🎯 12. Processo de Modelação: Interesse (Entidade adicional)
+
+Esta entidade foi criada como extensão do projeto para enriquecer o perfil pessoal.
+
+### Decisões de modelação:
+
+- Adicionada para tornar o portfólio mais completo  
+- Inclui ícone para representação visual  
+- Não fazia parte do enunciado original  
+
+---
+
+## 📓 13. Processo de Modelação: MakingOf
+
+A entidade MakingOf foi criada para documentar todo o processo de desenvolvimento do projeto.
+
+### Decisões de modelação:
+
+- Registar decisões importantes  
+- Documentar erros e respetivas soluções  
+- Incluir imagens do processo em papel  
+- Registar uso de inteligência artificial  
+
+---
+
+
+## 🤖 14. Utilização de Inteligência Artificial e Metodologia
+
+Durante o desenvolvimento utilizei ferramentas de inteligência artificial como apoio.
+
+Estas foram usadas principalmente para:
+
+- Esclarecimento de dúvidas técnicas  
+- Apoio na estruturação de modelos  
+- Resolução de erros de implementação  
+
+No entanto, todas as decisões foram analisadas e compreendidas, tendo o planeamento inicial sido realizado manualmente em papel.
+
+### Metodologia seguida:
+
+- Planeamento em papel (DER e atributos)  
+- Implementação incremental em Django  
+- Testes constantes no admin  
+- Ajustes progressivos no modelo  
+
+---
+
+## 📈 15. Conclusão
+
+Este projeto permitiu consolidar conhecimentos de modelação de dados e desenvolvimento web com Django.
+
+A abordagem baseada em planeamento inicial, evolução do modelo e documentação contínua foi essencial para garantir coerência e qualidade final da aplicação.
