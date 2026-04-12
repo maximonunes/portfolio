@@ -244,7 +244,7 @@ No entanto, todas as decisões foram analisadas e compreendidas, tendo o planeam
 
 ---
 
-## 📈 15. Conclusão
+## 15. Conclusão
 
 Este projeto permitiu consolidar conhecimentos de modelação de dados e desenvolvimento web com Django.
 
