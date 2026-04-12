@@ -44,13 +44,13 @@ Ao separar esta informação:
 ### Evidência da evolução
 
  DER inicial (com todos os atributos)  
-![DER](Midia/MakingOf/imagem2.jpg)
+![DER](/Midia/MakingOf/imagem2.jpg)
 
  DER final (simplificado)  
-![DER](Midia/MakingOf/1000019823.jpg)
+![DER](/Midia/MakingOf/1000019823.jpg)
 
  Página separada com atributos das entidades  
-![DER](Midia/MakingOf/1000019820.jpg)
+![DER](/Midia/MakingOf/1000019820.jpg)
 
 ---
 
