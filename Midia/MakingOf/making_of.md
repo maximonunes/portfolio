@@ -44,13 +44,13 @@ Ao separar esta informação:
 ### 📸 Evidência da evolução
 
 📸 DER inicial (com todos os atributos)  
-<!-- INSERIR IMAGEM DO DER INICIAL -->
+![Making Of](Mídia/MakingOf/imagem2.jpg)
 
 📸 DER final (simplificado)  
-<!-- INSERIR IMAGEM DO DER FINAL -->
+![Making Of](Mídia/MakingOf/1000019823.jpg)
 
 📸 Página separada com atributos das entidades  
-<!-- INSERIR IMAGEM DOS ATRIBUTOS -->
+![Making Of](Mídia/MakingOf/1000019820.jpg)
 
 ---
 
