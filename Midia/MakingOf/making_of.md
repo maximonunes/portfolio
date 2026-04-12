@@ -19,21 +19,24 @@ Esta abordagem permitiu-me organizar melhor a informação antes da implementaç
 
 ## 2. Evolução do Modelo e do DER
 
-Durante o processo de desenvolvimento, o modelo sofreu algumas alterações importantes.
+- Durante o processo de desenvolvimento, o modelo sofreu algumas alterações importantes.
 
-O primeiro DER incluía todos os atributos previstos inicialmente, incluindo um campo de **nível de interesse** na entidade Tecnologia.
+- O primeiro DER incluía todos os atributos previstos inicialmente, incluindo um campo de nível de interesse associado à entidade Tecnologia.
 
-No entanto, após reflexão e implementação prática, decidi remover esse atributo do modelo final.
+- Este atributo foi posteriormente reavaliado, concluindo-se que não era adequado enquanto simples campo da entidade, por representar um conceito mais amplo do que a própria tecnologia.
+
+- Assim, em vez de ser eliminado, este conceito foi reformulado e passou a ser representado através da criação de uma entidade independente denominada Interesse, permitindo uma modelação mais estruturada e flexível da informação.
 
 ### Justificação da alteração:
 
-- O nível de interesse acabou por ser redundante, pois o modelo já incluía Competências e Projetos como formas mais concretas de avaliação de experiência  
-- A remoção contribuiu para um modelo mais limpo e focado na informação essencial  
+- O nível de interesse, inicialmente associado à entidade Tecnologia, foi considerado pouco adequado enquanto atributo isolado, por ser redundante face a outras entidades mais representativas da experiência, como Competências e Projetos.
+- No entanto, em vez de ser removido do sistema, este conceito foi posteriormente reaproveitado sob a forma de uma entidade própria denominada Interesse, permitindo uma representação mais estruturada e independente desta informação.
+- Esta decisão contribuiu para um modelo mais organizado, coerente e com maior flexibilidade na gestão das relações entre entidades.
 - Melhorou a coerência do sistema de relações entre entidades  
 
-Outra decisão importante foi separar a definição dos atributos do DER.
+- Outra decisão importante foi separar a definição dos atributos do DER.
 
-Inicialmente, os atributos estavam incluídos no próprio diagrama, o que tornava o esquema visual mais pesado e difícil de interpretar.  
+- Inicialmente, os atributos estavam incluídos no próprio diagrama, o que tornava o esquema visual mais pesado e difícil de interpretar.  
 Ao separar esta informação:
 
 - o DER ficou mais claro e focado nas relações  
@@ -43,13 +46,16 @@ Ao separar esta informação:
 
 ### Evidência da evolução
 
- DER inicial (com todos os atributos)  
+ Diagrama inicial  
+
 ![DER](/Midia/MakingOf/imagem2.jpg)
 
- DER final (simplificado)  
+ Diagrama final
+
 ![DER](/Midia/MakingOf/1000019823.jpg)
 
  Página separada com atributos das entidades  
+
 ![DER](/Midia/MakingOf/1000019820.jpg)
 
 ---
