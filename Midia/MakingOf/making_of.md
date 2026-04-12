@@ -1,8 +1,8 @@
-# 📓 Making Of — Projeto Portfólio Django
+# Making Of — Projeto Portfólio Django
 
 ---
 
-## 🧠 1. Processo de Modelação Geral
+## 1. Processo de Modelação Geral
 
 O desenvolvimento deste projeto começou com uma fase de planeamento em papel, onde identifiquei todas as entidades necessárias para representar um portfólio académico completo.
 
@@ -17,7 +17,7 @@ Esta abordagem permitiu-me organizar melhor a informação antes da implementaç
 
 ---
 
-## 🔄 2. Evolução do Modelo e do DER
+## 2. Evolução do Modelo e do DER
 
 Durante o processo de desenvolvimento, o modelo sofreu algumas alterações importantes.
 
@@ -41,20 +41,20 @@ Ao separar esta informação:
 
 ---
 
-### 📸 Evidência da evolução
+### Evidência da evolução
 
 📸 DER inicial (com todos os atributos)  
-![Making Of](Mídia/MakingOf/imagem2.jpg)
+![Making Of](Midia/MakingOf/imagem2.jpg)
 
 📸 DER final (simplificado)  
-![Making Of](Mídia/MakingOf/1000019823.jpg)
+![Making Of](Midia/MakingOf/1000019823.jpg)
 
 📸 Página separada com atributos das entidades  
-![Making Of](Mídia/MakingOf/1000019820.jpg)
+![Making Of](Midia/MakingOf/1000019820.jpg)
 
 ---
 
-## 👤 3. Processo de Modelação: Perfil
+##  3. Processo de Modelação: Perfil
 
 A entidade Perfil representa a informação pessoal do portfólio.
 
@@ -70,7 +70,7 @@ Esta entidade serve como base de apresentação do portfólio.
 ---
 
 
-## 🎓 4. Processo de Modelação: Curso
+## 4. Processo de Modelação: Curso
 
 O Curso representa a estrutura base do percurso académico.
 
@@ -83,7 +83,7 @@ O Curso representa a estrutura base do percurso académico.
 ---
 
 
-## 📚 5. Processo de Modelação: Unidade Curricular
+## 5. Processo de Modelação: Unidade Curricular
 
 A Unidade Curricular foi uma das entidades mais importantes do modelo, pois organiza todo o percurso académico.
 
@@ -102,7 +102,7 @@ A Unidade Curricular foi uma das entidades mais importantes do modelo, pois orga
 ---
 
 
-## 👨‍🏫 6. Processo de Modelação: Docente
+## 6. Processo de Modelação: Docente
 
 Inicialmente, os docentes estavam representados apenas como texto dentro das UCs.
 
@@ -117,7 +117,7 @@ Após análise do modelo, percebi que isso criava redundância e pouca flexibili
 ---
 
 
-## 💻 7. Processo de Modelação: Projeto
+## 7. Processo de Modelação: Projeto
 
 Os projetos representam a parte prática do portfólio e são uma das entidades mais importantes.
 
@@ -136,7 +136,7 @@ Os projetos representam a parte prática do portfólio e são uma das entidades 
 ---
 
 
-## ⚙️ 8. Processo de Modelação: Tecnologia
+## 8. Processo de Modelação: Tecnologia
 
 A entidade Tecnologia representa ferramentas, linguagens e frameworks utilizados nos projetos.
 
@@ -150,7 +150,7 @@ Esta remoção foi importante para evitar redundância com outras entidades do s
 
 ---
 
-## 🧠 9. Processo de Modelação: Competência
+## 9. Processo de Modelação: Competência
 
 A entidade Competência representa as capacidades adquiridas ao longo do percurso académico.
 
@@ -162,7 +162,7 @@ A entidade Competência representa as capacidades adquiridas ao longo do percurs
 ---
 
 
-## 🎓 10. Processo de Modelação: Formação
+## 10. Processo de Modelação: Formação
 
 A entidade Formação representa cursos adicionais e certificações.
 
@@ -174,7 +174,7 @@ A entidade Formação representa cursos adicionais e certificações.
 ---
 
 
-## 🏆 11. Processo de Modelação: TFC
+## 11. Processo de Modelação: TFC
 
 Os Trabalhos Finais de Curso foram modelados com base em dados externos (JSON).
 
@@ -191,7 +191,7 @@ Os Trabalhos Finais de Curso foram modelados com base em dados externos (JSON).
 ---
 
 
-## 🎯 12. Processo de Modelação: Interesse (Entidade adicional)
+## 12. Processo de Modelação: Interesse (Entidade adicional)
 
 Esta entidade foi criada como extensão do projeto para enriquecer o perfil pessoal.
 
@@ -203,7 +203,7 @@ Esta entidade foi criada como extensão do projeto para enriquecer o perfil pess
 
 ---
 
-## 📓 13. Processo de Modelação: MakingOf
+## 13. Processo de Modelação: MakingOf
 
 A entidade MakingOf foi criada para documentar todo o processo de desenvolvimento do projeto.
 
@@ -217,7 +217,7 @@ A entidade MakingOf foi criada para documentar todo o processo de desenvolviment
 ---
 
 
-## 🤖 14. Utilização de Inteligência Artificial e Metodologia
+## 14. Utilização de Inteligência Artificial e Metodologia
 
 Durante o desenvolvimento utilizei ferramentas de inteligência artificial como apoio.
 
