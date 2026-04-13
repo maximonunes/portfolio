@@ -59,10 +59,10 @@ def carregar_dados():
                 }
             )
 
-            # 2. Tratar Código UC
+            
             codigo_uc = dados.get('curricularIUnitReadableCode') or dados.get('curricularUnitReadableCode') or f"UC-{dados.get('curricularUnitCode')}"
 
-            # 3. Criar/Atualizar UC (Ajustado para a ForeignKey do Docente)
+            
             uc, criada = UnidadeCurricular.objects.update_or_create(
                 codigo_legivel=codigo_uc,
                 defaults={
@@ -71,7 +71,7 @@ def carregar_dados():
                     'semestre': 1,
                     'ects': float(dados.get('ects', 0)),
                     'curso': curso,
-                    'docente_responsavel': docente_generico, # AGORA É UM OBJETO, NÃO TEXTO
+                    'docente_responsavel': docente_generico, 
                     'link_lusofona': f"https://www.ulusofona.pt/programas/{codigo_uc}"
                 }
             )
