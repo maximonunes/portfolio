@@ -7,7 +7,9 @@
     {% for curso in cursos %}
     <article>
         {% if curso.imagem %}
-            <img src="{{ curso.imagem.url }}" alt="{{ curso.nome }}" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+        <img src="{{ curso.imagem.url }}" 
+         alt="{{ curso.nome }}" 
+         style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
         {% endif %}
 
         <header>
