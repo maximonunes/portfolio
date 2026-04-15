@@ -11,6 +11,8 @@
     <!-- cada curso é um article, 
      com um header com o nome do curso e do professor, 
      e uma section com a lista de cursos-->
+     <img src="{{ curso.imagem.url }}" alt="{{ curso.nome }}" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+    {% endif %}
         <header>
             <h3>{{ curso.nome }}</h3>
             <p>Professor: {{ curso.professor.nome }}</p>

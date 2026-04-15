@@ -1,0 +1,24 @@
+{% extends "escola/base.html" %}
+{% block content %}
+<h2>Lista de Alunos</h2>
+<section>
+    {% for aluno in alunos %}
+    <article>
+        <header>
+            <h3>{{ aluno.nome }}</h3>
+            <p>Número: {{ aluno.numero }}</p>
+        </header>
+        <section>
+            <h4>Inscrito em:</h4>
+            <ul>
+                {% for curso in aluno.cursos.all %}
+                    <li>{{ curso.nome }}</li>
+                {% empty %}
+                    <li>Não frequenta cursos</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

@@ -6,4 +6,6 @@ from . import views
 urlpatterns = [
     path('cursos/', views.cursos_view, name="cursos"),
     path('', views.cursos_view),   #  rota que abre diretamente a página dos cursos
+    path('professores/', views.professores_view, name="professores"), # <-- Adicionar esta
+    path('alunos/', views.alunos_view, name="alunos"),
 ]
