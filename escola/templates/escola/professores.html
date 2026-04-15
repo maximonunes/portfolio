@@ -6,10 +6,9 @@
     <article>
         <header>
             <h3>{{ professor.nome }}</h3>
-            <p>E-mail: {{ professor.email }}</p>
         </header>
         <section>
-            <h4>Leciona em:</h4>
+            <h4>Cursos</h4>
             <ul>
                 {% for curso in professor.cursos.all %}
                     <li>{{ curso.nome }}</li>

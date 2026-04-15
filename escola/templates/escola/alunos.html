@@ -6,10 +6,9 @@
     <article>
         <header>
             <h3>{{ aluno.nome }}</h3>
-            <p>Número: {{ aluno.numero }}</p>
         </header>
         <section>
-            <h4>Inscrito em:</h4>
+            <h4>Cursos</h4>
             <ul>
                 {% for curso in aluno.cursos.all %}
                     <li>{{ curso.nome }}</li>
