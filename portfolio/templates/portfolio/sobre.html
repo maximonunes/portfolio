@@ -1,0 +1,25 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<section style="padding: 20px;">
+    <h1>Sobre esta Aplicação</h1>
+    
+    <h3>1. Arquitetura MVT</h3>
+    <p>Esta aplicação utiliza o padrão Model-View-Template do Django:</p>
+    <ul>
+        <li><strong>Model:</strong> Define a estrutura dos dados (ex: Projetos, Tecnologias).</li>
+        <li><strong>View:</strong> Gere a lógica de negócio e os formulários CRUD.</li>
+        <li><strong>Template:</strong> Faz a renderização do HTML dinâmico.</li>
+    </ul>
+    
+    <div style="border: 1px solid #444; padding: 10px; text-align: center;">
+        <p>[FOTO DO DESENHO DA ARQUITETURA AQUI]</p>
+        </div>
+
+    <h3>2. Tecnologias Utilizadas</h3>
+    <p>Django, HTML5, CSS3, SQLite (Base de Dados) e Git.</p>
+
+    <h3>3. Repositório</h3>
+    <p>Código disponível no <a href="LINK_DO_TEU_GITHUB">GitHub</a>.</p>
+</section>
+{% endblock %}

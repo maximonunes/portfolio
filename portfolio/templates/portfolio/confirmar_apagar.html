@@ -1,0 +1,14 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<div style="text-align: center; padding: 50px;">
+    <h2 style="color: #ff4444;">Tens a certeza?</h2>
+    <p>Estás prestes a apagar permanentemente: <strong>{{ item }}</strong></p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" style="background: red; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Sim, Apagar</button>
+        <a href="javascript:history.back()" style="margin-left: 10px;">Não, voltar atrás</a>
+    </form>
+</div>
+{% endblock %}

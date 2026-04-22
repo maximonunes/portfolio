@@ -1,0 +1,12 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<section style="text-align: center; padding: 50px 20px;">
+    <h1>Bem-vindo ao meu Portfólio</h1>
+    <p style="font-size: 1.2rem; color: #ccc;">Desenvolvedor em formação | Apaixonado por tecnologia e Python.</p>
+    
+    <div style="margin-top: 30px;">
+        <a href="{% url 'portfolio:projetos' %}" class="btn">Ver Meus Projetos</a>
+    </div>
+</section>
+{% endblock %}

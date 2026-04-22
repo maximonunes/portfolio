@@ -1,0 +1,23 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<section style="padding: 20px; max-width: 800px; margin: auto; background: #1a1a1a; color: white; border-radius: 10px;">
+    <h2>{{ titulo }}</h2>
+    <hr>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="django-form">
+            {{ form.as_p }}
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button type="submit" style="background: #d14a96; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">
+                Gravar Alterações
+            </button>
+            <a href="javascript:history.back()" style="color: #aaa; margin-left: 15px; text-decoration: none;">Cancelar</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<section style="padding: 20px;">
+    <h2>Meus Projetos</h2>
+    
+    <div style="margin-bottom: 20px;">
+        <a href="{% url 'portfolio:novo_projeto' %}" style="background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">
+            + Adicionar Novo Projeto
+        </a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+        {% for projeto in projetos %}
+            <div style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;">
+                <h3>{{ projeto.titulo }}</h3>
+                <p>{{ projeto.descricao|truncatechars:100 }}</p>
+                
+                <div style="margin-top: 15px;">
+                    <a href="{% url 'portfolio:edita_projeto' projeto.id %}" style="color: #ffc107; text-decoration: none; margin-right: 15px;">📝 Editar</a>
+                    <a href="{% url 'portfolio:apaga_projeto' projeto.id %}" style="color: #dc3545; text-decoration: none;">🗑️ Apagar</a>
+                </div>
+            </div>
+        {% empty %}
+            <p>Ainda não tens projetos registados.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
