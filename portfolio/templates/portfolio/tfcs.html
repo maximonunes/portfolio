@@ -1,0 +1,17 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+
+<h1>TFCs</h1>
+
+<ul>
+  {% for tfc in tfcs %}
+    <li>
+      <strong>{{ tfc.titulo }}</strong><br>
+      Ano: {{ tfc.ano_realizacao }}<br>
+      Curso: {{ tfc.curso.nome }}
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

@@ -71,3 +71,9 @@ def tfcs_view(request):
     return render(request, 'portfolio/tfcs.html', {
         'tfcs': tfcs
     })
+
+def cursos_view(request):
+    cursos = Curso.objects.all()
+    return render(request, 'portfolio/cursos.html', {
+        'cursos': cursos
+    })
