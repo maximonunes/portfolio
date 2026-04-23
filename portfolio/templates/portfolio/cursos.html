@@ -1,0 +1,9 @@
+<h1>Cursos</h1>
+
+<ul>
+  {% for curso in cursos %}
+    <li>
+      {{ curso.nome }} ({{ curso.codigo }})
+    </li>
+  {% endfor %}
+</ul>

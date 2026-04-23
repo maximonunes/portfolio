@@ -1,0 +1,12 @@
+<h1>Tecnologias</h1>
+
+<ul>
+  {% for tech in tecnologias %}
+    <li>
+      <strong>{{ tech.nome }}</strong> ({{ tech.categoria }})<br>
+      Nível: {{ tech.nivel_interesse }}
+    </li>
+  {% empty %}
+    <li>Sem tecnologias.</li>
+  {% endfor %}
+</ul>

@@ -11,4 +11,8 @@ urlpatterns = [
     path('projetos/apagar/<int:id>/', views.apaga_projeto_view, name='apaga_projeto'),
     path('tecnologia/nova/', views.nova_tecnologia_view, name='nova_tecnologia'),
     path('sobre/', views.sobre_view, name='sobre'),
+    path('tecnologias/', views.tecnologias_view, name='tecnologias'),
+    path('ucs/', views.ucs_view, name='ucs'),
+    path('tfcs/', views.tfcs_view, name='tfcs'),
+    path('cursos/', views.cursos_view, name='cursos'),
 ]

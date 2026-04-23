@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Projeto  # Confirma se o teu modelo se chama Projeto
 from .forms import ProjetoForm
 from .forms import TecnologiaForm
+from .models import Tecnologia, UnidadeCurricular, TFC , Curso
 
 
 # Página Inicial do Portfólio
@@ -50,3 +51,23 @@ def nova_tecnologia_view(request):
         form.save()
         return redirect('portfolio:home') # Redireciona para onde quiseres
     return render(request, 'portfolio/formulario.html', {'form': form, 'titulo': 'Nova Tecnologia'})
+
+
+# Tudo daqui para baixo foi adicionado com base na ficha 7
+def tecnologias_view(request):
+    tecnologias = Tecnologia.objects.all()
+    return render(request, 'portfolio/tecnologias.html', {
+        'tecnologias': tecnologias
+    })
+
+def ucs_view(request):
+    ucs = UnidadeCurricular.objects.all()
+    return render(request, 'portfolio/ucs.html', {
+        'ucs': ucs
+    })
+
+def tfcs_view(request):
+    tfcs = TFC.objects.all()
+    return render(request, 'portfolio/tfcs.html', {
+        'tfcs': tfcs
+    })
