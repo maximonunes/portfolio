@@ -21,5 +21,9 @@ urlpatterns = [
     path('competencias/nova/', views.nova_competencia_view, name='nova_competencia'),
     path('competencias/editar/<int:id>/', views.edita_competencia_view, name='edita_competencia'),
     path('competencias/apagar/<int:id>/', views.apaga_competencia_view, name='apaga_competencia'),
+    path('formacoes/', views.formacoes_view, name='formacoes'),
+    path('formacoes/nova/', views.nova_formacao_view, name='nova_formacao'),
+    path('formacoes/editar/<int:id>/', views.edita_formacao_view, name='edita_formacao'),
+    path('formacoes/apagar/<int:id>/', views.apaga_formacao_view, name='apaga_formacao'),
     path('makingof/', views.makingof_view, name='makingof'),
 ]

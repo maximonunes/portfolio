@@ -1,19 +1,24 @@
-
 {% extends 'portfolio/layout.html' %}
 
 {% block content %}
 
 <h1>Tecnologias</h1>
 
+<a href="{% url 'portfolio:nova_tecnologia' %}">
+  Nova Tecnologia
+</a>
+
 <ul>
   {% for tech in tecnologias %}
     <li>
       <strong>{{ tech.nome }}</strong> ({{ tech.categoria }})<br>
       Nível: {{ tech.nivel_interesse }}
+
+      <br>
+      <a href="{% url 'portfolio:edita_tecnologia' tech.id %}">✏️ Editar</a>
+      <a href="{% url 'portfolio:apaga_tecnologia' tech.id %}">🗑️ Apagar</a>
     </li>
-  {% empty %}
-    <li>Sem tecnologias.</li>
-  {% endfor %}
+    {% endfor %}
 </ul>
 
 {% endblock %}

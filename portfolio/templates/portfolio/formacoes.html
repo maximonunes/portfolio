@@ -1,0 +1,20 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<h1>Formações</h1>
+
+<a href="{% url 'portfolio:nova_formacao' %}">Nova Formação</a>
+
+<ul>
+    {% for formacao in formacoes %}
+        <li>
+            {{ formacao }}
+
+            <a href="{% url 'portfolio:edita_formacao' formacao.id %}">Editar</a>
+            <a href="{% url 'portfolio:apaga_formacao' formacao.id %}">Apagar</a>
+        </li>
+   
+    {% endfor %}
+</ul>
+
+{% endblock %}

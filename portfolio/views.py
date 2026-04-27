@@ -4,7 +4,7 @@ from .forms import ProjetoForm
 from .forms import TecnologiaForm
 from .forms import FormacaoForm
 from .forms import CompetenciaForm
-from .models import Tecnologia, UnidadeCurricular, TFC , Curso, Formacao, Competencia
+from .models import Tecnologia, UnidadeCurricular, TFC , Curso, Formacao, Competencia, MakingOf
 
 
 # Página Inicial do Portfólio

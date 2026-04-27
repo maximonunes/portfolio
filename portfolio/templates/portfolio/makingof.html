@@ -1,4 +1,7 @@
+{% extends 'portfolio/layout.html' %}
 {% load markdownify %}
+
+{% block content %}
 
 <h1>Making Of</h1>
 
@@ -21,3 +24,5 @@
         {% endif %}
     </div>
 {% endfor %}
+
+{% endblock %}
