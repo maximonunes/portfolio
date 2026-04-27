@@ -1,0 +1,22 @@
+<h1>Competências</h1>
+
+<a href="{% url 'portfolio:nova_competencia' %}">
+    Nova Competência
+</a>
+
+<ul>
+{% for competencia in competencias %}
+    <li>
+        {{ competencia.nome }} (Nível: {{ competencia.nivel }})
+
+        <a href="{% url 'portfolio:edita_competencia' competencia.id %}">
+            Editar
+        </a>
+
+        <form action="{% url 'portfolio:apaga_competencia' competencia.id %}" method="POST" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Apagar</button>
+        </form>
+    </li>
+{% endfor %}
+</ul>

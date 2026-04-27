@@ -1,0 +1,23 @@
+{% load markdownify %}
+
+<h1>Making Of</h1>
+
+{% for registo in registos %}
+    <div>
+        <h3>{{ registo.etapa }}</h3>
+        <p><strong>Data:</strong> {{ registo.data }}</p>
+
+        <h4>Decisões</h4>
+        <div>{{ registo.decisoes|markdownify }}</div>
+
+        <h4>Erros e Soluções</h4>
+        <div>{{ registo.erros_solucoes|markdownify }}</div>
+
+        <h4>Uso de IA</h4>
+        <div>{{ registo.uso_ia|markdownify }}</div>
+
+        {% if registo.imagem_caderno %}
+            <img src="{{ registo.imagem_caderno.url }}" width="300">
+        {% endif %}
+    </div>
+{% endfor %}
