@@ -38,8 +38,28 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "portfolio",
+    'markdownify.apps.MarkdownifyConfig',
     "escola"
 ]
+
+
+MARKDOWNIFY = {
+   "default": {
+      "WHITELIST_TAGS": [
+        'a', 'abbr', 'acronym', 
+        'strong', 'b',
+        'blockquote', 'em', 'i',
+        'ul', 'li', 'ol',
+        'p',
+        'h1', 'h2', 'h3', 'h4',
+      ]
+   },
+
+   "alternative": {
+      "WHITELIST_TAGS": ["a", "p"],
+      "MARKDOWN_EXTENSIONS": ["markdown.extensions.fenced_code", ]
+   }
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
