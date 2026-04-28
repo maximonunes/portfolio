@@ -4,22 +4,101 @@
 <section style="padding: 20px;">
     <h1>Sobre esta Aplicação</h1>
     
+    <!-- 1. MVT -->
     <h3>1. Arquitetura MVT</h3>
     <p>Esta aplicação utiliza o padrão Model-View-Template do Django:</p>
+
     <ul>
         <li><strong>Model:</strong> Define a estrutura dos dados (ex: Projetos, Tecnologias).</li>
-        <li><strong>View:</strong> Gere a lógica de negócio e os formulários CRUD.</li>
-        <li><strong>Template:</strong> Faz a renderização do HTML dinâmico.</li>
+        <li><strong>View:</strong> Gere a lógica da aplicação e processa pedidos.</li>
+        <li><strong>Template:</strong> Responsável pela apresentação visual.</li>
     </ul>
-    
+
+    <p>
+        O utilizador faz um pedido → a View processa → consulta o Model → devolve um Template com dados.
+    </p>
+
+    <!-- FOTO DO DESENHO -->
     <div style="border: 1px solid #444; padding: 10px; text-align: center;">
-        <p>FOTO AQUI</p>
-        </div>
+        <p><strong>Diagrama MVT:</strong></p>
+        <img src="/Midia/MakingOf/1000021147.jpg" width="400">
+    </div>
 
-    <h3>2. Tecnologias Utilizadas</h3>
-    <p>Django, HTML5, CSS3, SQLite (Base de Dados) e Git.</p>
+    <!-- VIDEO -->
+    <h4>Vídeo explicativo</h4>
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/SEU_VIDEO"
+        frameborder="0" allowfullscreen>
+    </iframe>
 
-    <h3>3. Repositório</h3>
-    <p>Código disponível no <a href="https://github.com/maximonunes/portfolio">GitHub</a>.</p>
+
+    <!-- 2. MODELAÇÃO -->
+    <h3>2. Modelação</h3>
+
+    <p>
+        A aplicação foi modelada com várias entidades como Projeto, Tecnologia, Unidade Curricular e TFC.
+    </p>
+
+    <ul>
+        <li>Projeto → Tecnologia (ManyToMany)</li>
+        <li>Projeto → Unidade Curricular (ForeignKey)</li>
+        <li>TFC → Curso (ForeignKey)</li>
+    </ul>
+
+    <div style="border: 1px solid #444; padding: 10px; text-align: center;">
+        <p><strong>Diagrama ER:</strong></p>
+        <img src="/Midia/MakingOf/1000019823.jpg" width="400">
+    </div>
+
+
+    <!-- 3. TECNOLOGIAS -->
+    <h3>3. Tecnologias Utilizadas</h3>
+
+    <ul>
+        <li><strong>Backend:</strong> Django</li>
+        <li><strong>Frontend:</strong> HTML5 e CSS3</li>
+        <li><strong>Base de Dados:</strong> SQLite</li>
+        <li><strong>Outros:</strong> Git, GitHub, CodeSpaces</li>
+    </ul>
+
+
+    <!-- 4. ESTRUTURA -->
+    <h3>4. Estrutura da Aplicação</h3>
+
+    <p>Mapa de navegação da aplicação:</p>
+
+    <div style="border: 1px solid #444; padding: 10px; text-align: center;">
+        <img src="/Midia/MakingOf/1000021148.jpg" width="400">
+    </div>
+
+
+    <!-- 5. GITHUB -->
+    <h3>5. Repositório GitHub</h3>
+
+    <p>
+        O código encontra-se disponível em:
+        <a href="https://github.com/maximonunes/portfolio" target="_blank">
+            GitHub
+        </a>
+    </p>
+
+    <p>
+        O GitHub foi utilizado para controlo de versões, permitindo guardar alterações,
+        acompanhar o desenvolvimento e manter o projeto organizado.
+    </p>
+
+
+    <!-- 6. MAKING OF -->
+    <h3>6. Making Of</h3>
+
+    <p>
+        Durante o desenvolvimento foram registadas várias etapas, incluindo criação de modelos,
+        implementação de views, e resolução de erros.
+    </p>
+
+    <p>
+        Foi utilizada IA como apoio na resolução de problemas e melhoria do código.
+    </p>
+
 </section>
 {% endblock %}
