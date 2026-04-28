@@ -48,15 +48,15 @@ Ao separar esta informação:
 
  Diagrama inicial  
 
-![DER](/Midia/MakingOf/imagem2.jpg)
+![DER](/media/MakingOf/imagem2.jpg)
 
  Diagrama final
 
-![DER](/Midia/MakingOf/1000019823.jpg)
+![DER](/media/MakingOf/1000019823.jpg)
 
  Página separada com atributos das entidades  
 
-![DER](/Midia/MakingOf/1000019820.jpg)
+![DER](/media/MakingOf/1000019820.jpg)
 
 ---
 
