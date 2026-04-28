@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "portfolio",
+    'markdownify.apps.MarkdownifyConfig',
     "escola"
 ]
 
